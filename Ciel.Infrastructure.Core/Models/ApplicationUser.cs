@@ -12,6 +12,8 @@ public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
         Logins = new HashSet<IdentityUserLogin<string>>();
     }
 
+    public string Photo { get; set; }
+
     // AuditInfo
     public string? CreatedBy { get; set; }
     public DateTime CreatedOn { get; set; }
