@@ -17,9 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{3FEB91DF-C5C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{084E394F-F419-4EC4-BA20-D5AFC0A9F0D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciel.Infrastructure", "Ciel.Infrastructure\Ciel.Infrastructure.csproj", "{B2636550-ED55-4105-B868-970C2B581799}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ciel.Infrastructure", "Ciel.Infrastructure\Ciel.Infrastructure.csproj", "{B2636550-ED55-4105-B868-970C2B581799}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciel.Infrastructure.Core", "Ciel.Infrastructure.Core\Ciel.Infrastructure.Core.csproj", "{C833C4AB-5FC8-46DA-9BAE-7975755EB539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ciel.Infrastructure.Core", "Ciel.Infrastructure.Core\Ciel.Infrastructure.Core.csproj", "{C833C4AB-5FC8-46DA-9BAE-7975755EB539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciel.API", "Ciel.API\Ciel.API.csproj", "{26FD38B6-08F0-4290-8B83-239108F349F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciel.API.Core", "Ciel.API.Core\Ciel.API.Core.csproj", "{9B5ACFBD-E136-4739-B922-107C8BCCC995}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FD38B6-08F0-4290-8B83-239108F349F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FD38B6-08F0-4290-8B83-239108F349F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FD38B6-08F0-4290-8B83-239108F349F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FD38B6-08F0-4290-8B83-239108F349F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5ACFBD-E136-4739-B922-107C8BCCC995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5ACFBD-E136-4739-B922-107C8BCCC995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5ACFBD-E136-4739-B922-107C8BCCC995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5ACFBD-E136-4739-B922-107C8BCCC995}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +60,8 @@ Global
 		{084E394F-F419-4EC4-BA20-D5AFC0A9F0D6} = {948E1BE3-C129-4902-B9FB-C4D40084A2BD}
 		{B2636550-ED55-4105-B868-970C2B581799} = {1D542FC6-F371-4A4B-B44F-C34D354F57E6}
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539} = {1D542FC6-F371-4A4B-B44F-C34D354F57E6}
+		{26FD38B6-08F0-4290-8B83-239108F349F1} = {3FEB91DF-C5C2-48E9-9580-064D2A1C009F}
+		{9B5ACFBD-E136-4739-B922-107C8BCCC995} = {3FEB91DF-C5C2-48E9-9580-064D2A1C009F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {165D47F7-EEE9-4FE1-9F32-3B03B2B87F09}
