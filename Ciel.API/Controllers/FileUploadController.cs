@@ -1,48 +1,49 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Ciel.API.Core;
+using Ciel.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Ciel.API.Controllers;
 
 public class FileUploadController : APIController
 {
-    private readonly string _uploadPath;
+    private readonly AppConfig _appConfig;
 
-    public FileUploadController(IConfiguration configuration)
+    public FileUploadController(IOptions<AppConfig> config)
     {
-        _uploadPath = configuration["Settings:StoredFilesPath"] ?? Directory.GetCurrentDirectory();
+        _appConfig = config.Value;
     }
 
     [HttpPost("/api/upload")]
     [Authorize]
     public async Task<IActionResult> FileUploadAsync(IFormFileCollection files)
     {
+        var listFile = new List<string>();
         foreach (var file in files)
         {
-            await UploadAsync(file);
+            listFile.Add(await UploadAsync(file));
         }
-        return Ok();
+        return Ok(ApiResult<List<string>>.Success(listFile));
     }
 
     private async Task<string> UploadAsync(IFormFile file)
     {
-        if (!Directory.Exists(_uploadPath))
-            Directory.CreateDirectory(_uploadPath);
+        var uploadPath = Path.Combine(_appConfig.ConfigurationsPath, _appConfig.UploadFolder);
+        if (!Directory.Exists(uploadPath))
+            Directory.CreateDirectory(uploadPath);
 
-        var fileName = GetRandomFileName(Path.GetExtension(file.FileName));
-        var tempFile = Path.Combine(_uploadPath, fileName);
+        var fileName = GetRandomFileNameWithExtension(Path.GetExtension(file.FileName));
+        var tempFile = Path.Combine(uploadPath, fileName);
 
         using var stream = System.IO.File.OpenWrite(tempFile);
         await file.CopyToAsync(stream);
 
-        return tempFile;
+        return Path.Combine(_appConfig.UploadFolder, fileName);
     }
 
-    private static string GetRandomFileName(string extension = null)
+    private static string GetRandomFileNameWithExtension(string? extension)
     {
-        if (extension == null)
-        {
-            return Path.GetRandomFileName();
-        }
         return Path.ChangeExtension(Path.GetRandomFileName(), extension);
     }
 }

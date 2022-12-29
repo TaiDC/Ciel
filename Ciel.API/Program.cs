@@ -2,6 +2,7 @@ using Ciel.API.Core;
 using Ciel.API.Extensions;
 using Ciel.API.Filters;
 using Ciel.API.Middleware;
+using Ciel.API.Models;
 using Ciel.Infrastructure;
 using Ciel.Infrastructure.Seeding;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,9 @@ builder.Services.AddJwt(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddPersistence();
+
+// Configuration
+builder.Services.Configure<AppConfig>(builder.Configuration.GetSection(nameof(AppConfig)));
 
 var app = builder.Build();
 
