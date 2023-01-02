@@ -17,9 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{3FEB91DF-C5C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{084E394F-F419-4EC4-BA20-D5AFC0A9F0D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciel.Infrastructure", "Ciel.Infrastructure\Ciel.Infrastructure.csproj", "{B2636550-ED55-4105-B868-970C2B581799}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ciel.Infrastructure", "Ciel.Infrastructure\Ciel.Infrastructure.csproj", "{B2636550-ED55-4105-B868-970C2B581799}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ciel.Infrastructure.Core", "Ciel.Infrastructure.Core\Ciel.Infrastructure.Core.csproj", "{C833C4AB-5FC8-46DA-9BAE-7975755EB539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ciel.Infrastructure.Core", "Ciel.Infrastructure.Core\Ciel.Infrastructure.Core.csproj", "{C833C4AB-5FC8-46DA-9BAE-7975755EB539}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ciel.WPF", "Ciel.WPF\Ciel.WPF.csproj", "{DBCE734D-AA98-4B6A-A1E2-488BCC02DBC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ciel.WPF.Core", "Ciel.WPF.Core\Ciel.WPF.Core.csproj", "{9BA90F30-2403-476C-9A9A-BE146306E264}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBCE734D-AA98-4B6A-A1E2-488BCC02DBC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBCE734D-AA98-4B6A-A1E2-488BCC02DBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBCE734D-AA98-4B6A-A1E2-488BCC02DBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBCE734D-AA98-4B6A-A1E2-488BCC02DBC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA90F30-2403-476C-9A9A-BE146306E264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA90F30-2403-476C-9A9A-BE146306E264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA90F30-2403-476C-9A9A-BE146306E264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA90F30-2403-476C-9A9A-BE146306E264}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +60,8 @@ Global
 		{084E394F-F419-4EC4-BA20-D5AFC0A9F0D6} = {948E1BE3-C129-4902-B9FB-C4D40084A2BD}
 		{B2636550-ED55-4105-B868-970C2B581799} = {1D542FC6-F371-4A4B-B44F-C34D354F57E6}
 		{C833C4AB-5FC8-46DA-9BAE-7975755EB539} = {1D542FC6-F371-4A4B-B44F-C34D354F57E6}
+		{DBCE734D-AA98-4B6A-A1E2-488BCC02DBC2} = {084E394F-F419-4EC4-BA20-D5AFC0A9F0D6}
+		{9BA90F30-2403-476C-9A9A-BE146306E264} = {084E394F-F419-4EC4-BA20-D5AFC0A9F0D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {165D47F7-EEE9-4FE1-9F32-3B03B2B87F09}

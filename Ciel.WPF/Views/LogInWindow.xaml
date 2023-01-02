@@ -1,0 +1,145 @@
+﻿<mah:MetroWindow
+    x:Class="Ciel.WPF.Views.LogInWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:properties="clr-namespace:Ciel.WPF.Properties"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    Style="{StaticResource WithoutTitleMetroWindow}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d"
+    d:DesignHeight="450" d:DesignWidth="800">
+    <mah:MetroWindow.Resources>
+        <Style TargetType="mah:WindowButtonCommands">
+            <Setter Property="Foreground" Value="{StaticResource MahApps.Brushes.ThemeForeground}" />
+        </Style>
+    </mah:MetroWindow.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.5*" />
+        </Grid.ColumnDefinitions>
+        
+        <!--// Left Pannel //-->
+        <Border>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="{StaticResource MahApps.Colors.Accent}" Offset="0" />
+                    <GradientStop Color="{StaticResource MahApps.Colors.Accent2}" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Canvas>
+                    <Polygon Points="0,20,230,140 0,270" Fill="{StaticResource MahApps.Brushes.Accent4}" />
+                    <Polygon Points="100,300 150,350 80, 370" Fill="{StaticResource MahApps.Brushes.Accent4}" />
+                    <Polygon Points="250,250 275,300 300, 250" Fill="{StaticResource MahApps.Brushes.Accent4}" />
+                </Canvas>
+
+                <StackPanel>
+                    <TextBlock
+                        Style="{StaticResource HeaderTitleStyle}"
+                        Foreground="#ffffff"
+                        TextAlignment="Center"
+                        Margin="{StaticResource MediumLeftTopRightMargin}"
+                        Text="{x:Static properties:Resources.LogInPageTitle}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+        
+        <!--// Right Pannel //-->
+        <Border Grid.Column="1">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <Ellipse
+                    Grid.ColumnSpan="2"
+                    Width="100" 
+                    Height="100"
+                    Margin="{StaticResource MediumLeftTopRightBottomMargin}">
+                    <Ellipse.Fill>
+                        <ImageBrush
+                            ImageSource="{Binding User.Photo}"
+                            Stretch="UniformToFill" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                
+                <!--// UserName //-->
+                <Border
+                    BorderThickness="1"
+                    BorderBrush="#acb0af"
+                    Margin="70 7"
+                    CornerRadius="5">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Style="{StaticResource MediumIconStyle}"
+                            Foreground="{StaticResource MahApps.Brushes.Accent}"
+                            Text="&#xE77B;" />
+
+                        <TextBox
+                            x:Name="txtUserName"
+                            Grid.Column="1"
+                            Margin="{StaticResource SmallLeftRightMargin}"
+                            BorderThickness="0"
+                            VerticalAlignment="Center"
+                            mah:TextBoxHelper.SelectAllOnFocus="True"
+                            mah:TextBoxHelper.Watermark="{x:Static properties:Resources.LogInUserNameWatermark}"
+                            Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+
+                </Border>
+                
+                <!--// Password //-->
+                <Border
+                    BorderThickness="1"
+                    BorderBrush="#acb0af"
+                    Margin="70 7"
+                    CornerRadius="5">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Style="{StaticResource MediumIconStyle}"
+                            Foreground="{StaticResource MahApps.Brushes.Accent}"
+                            Text="&#xE72E;" />
+
+                        <PasswordBox
+                            x:Name="pwdPassword"
+                            Grid.Column="1"
+                            Margin="{StaticResource SmallLeftRightMargin}"
+                            BorderThickness="0"
+                            VerticalContentAlignment="Center"
+                            mah:TextBoxHelper.SelectAllOnFocus="True" 
+                            mah:TextBoxHelper.Watermark="{x:Static properties:Resources.LogInPasswordWatermark}"
+                            mah:PasswordBoxBindingBehavior.Password="{Binding Password}">
+                        </PasswordBox>
+                    </Grid>
+                </Border>
+
+                <!--// Login Button //-->
+                <Button
+                    Margin="0 20 0 0"
+                    IsDefault="True"
+                    AutomationProperties.Name="{x:Static properties:Resources.LogInButton}"
+                    Style="{StaticResource MaterialButton}"
+                    Content="{x:Static properties:Resources.LogInButton}"
+                    Command="{Binding LoginCommand}">
+                </Button>
+
+                <!--// Error //-->
+                <TextBlock
+                    Style="{StaticResource BodyTextStyle}"
+                    Foreground="{StaticResource MahApps.Brushes.SystemControlErrorTextForeground}"
+                    Margin="{StaticResource MediumLeftTopRightMargin}"
+                    Text="{Binding StatusMessage}" />
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</mah:MetroWindow>
